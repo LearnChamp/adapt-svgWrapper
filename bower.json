@@ -1,17 +1,17 @@
 {
-  "name": "adapt-svgWrapper",
-  "repository": "git://github.com/LearnChamp/adapt-svgWrapper",
-  "version": "1.0.0",
-  "framework": "^2.1.0",
-  "homepage": "",
-  "issues": "",
-  "displayName" : "SVG Wrapper",
-  "component" : "svgWrapper",
-  "description": "Display (animated) svg graphics.",
-  "main": "/js/adapt-svgWrapper.js",
-  "keywords": [
-    "adapt-plugin",
-    "adapt-component"
-  ],
-  "license": "GPLv3"
+    "name": "adapt-svgWrapper",
+    "repository": "git://github.com/LearnChamp/adapt-svgWrapper",
+    "framework": "^2.1.0",
+    "version": "1.0.0",
+    "homepage": "",
+    "issues": "",
+    "displayName": "SVG Wrapper",
+    "component": "svgWrapper",
+    "description": "Display (animated) svg graphics.",
+    "main": "/js/adapt-svgWrapper.js",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component"
+    ],
+    "license": "GPLv3"
 }
