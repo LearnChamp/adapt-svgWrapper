@@ -4,6 +4,8 @@ This components loads svg-graphics. to improve experience for mobile users, you 
 
 With this component course creators can also animate svg's directly inside the [Adapt Authoring Tool](https://github.com/adaptlearning/adapt_authoring). 
 
+![svgWrapper](https://github.com/LearnChamp/sharedAssets/blob/master/assets/adapt-svgWrapper.gif?raw=true)   
+
 ## Installation
 To install the component with the [Adapt CLI](https://github.com/adaptlearning/adapt-cli), run the following from the command line:  
 `adapt install adapt-svgWrapper`
