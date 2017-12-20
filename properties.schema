@@ -1,0 +1,373 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+  },
+  "properties":{
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the instruction text",
+      "translatable": true
+    },
+    "_triggerOnScreen": {
+      "type": "object",
+      "required": false,
+      "title": "Trigger on Screen",
+      "properties": {
+        "_isEnabled": {
+          "type": "boolean",
+          "required": false,
+          "title": "Enabled",
+          "default": false,
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "Check to activate trigger on screen"
+        },
+        "_percentInviewVertical": {
+          "type": "number",
+          "required": false,
+          "title": "Percent visible",
+          "default": 60,
+          "inputType": "Number",
+          "validators": [],
+          "help": "Controls what percentage of the component's height needs to be in the viewport to trigger the animation."
+        }
+      }
+    },
+    "_landscape": {
+      "type": "object",
+      "required": true,
+      "title": "Landscape Graphic",
+      "properties": {
+        "_src": {
+          "type": "string",
+          "required": true,
+          "title": "Graphic",
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": ["required"],
+          "help": "The image for landscape orientation"
+        },
+        "_width": {
+          "type": "number",
+          "required": true,
+          "title": "Graphic width",
+          "default": 100,
+          "inputType": "Number",
+          "validators": ["required", "number"],
+          "help": "The image width for landscape orientation"
+        },
+        "_height": {
+          "type": "number",
+          "required": true,
+          "title": "Graphic height",
+          "default": 100,
+          "inputType": "Number",
+          "validators": ["required", "number"],
+          "help": "The image height for landscape orientation"
+        },
+        "_initial": {
+          "type": "array",
+          "required": true,
+          "title": "Initial animation state",
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_selector": {
+                "type": "string",
+                "required": false,
+                "title": "Selector",
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "CSS selector for the elements"
+              },
+              "_properties": {
+                "type": "object",
+                "default": {},
+                "title": "CSS Attributes",
+                "inputType": {
+                  "type": "CodeEditor",
+                  "mode": "json"
+                },
+                "validators": [],
+                "help": "CSS values applied to the selector using snap svg"
+              }
+            }
+          }
+        },
+        "_states": {
+          "type": "array",
+          "required": true,
+          "title": "Animation states",
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_index": {
+                "type": "number",
+                "required": false,
+                "default": 0,
+                "title": "Index",
+                "inputType": "Number",
+                "validators": ["number"],
+                "help": "Order of the animation"
+              },
+              "_selector": {
+                "type": "string",
+                "required": false,
+                "title": "Selector",
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "CSS selector for the elements"
+              },
+              "_animation": {
+                "type": "object",
+                "default": {},
+                "title": "CSS Attributes",
+                "inputType": {
+                  "type": "CodeEditor",
+                  "mode": "json"
+                },
+                "validators": [],
+                "help": "CSS values applied to the selector using snap svg"
+              },
+              "_duration": {
+                "type": "number",
+                "required": false,
+                "default": 200,
+                "title": "Duration",
+                "inputType": "Number",
+                "validators": ["number"],
+                "help": "Duration of the animation in milliseconds"
+              },
+              "_delay": {
+                "type": "number",
+                "required": false,
+                "default": 0,
+                "title": "Delay",
+                "inputType": "Number",
+                "validators": ["number"],
+                "help": "Delay of the animation in milliseconds"
+              },
+              "_easing": {
+                "type": "string",
+                "required": true,
+                "title": "Easing",
+                "enum": [
+                  "linear",
+                  "easeout",
+                  "easein",
+                  "easeinout",
+                  "backin",
+                  "backout",
+                  "elastic",
+                  "bounce"
+                ],
+                "default": "linear",
+                "inputType": {
+                  "type": "Select", 
+                  "options":[
+                    "linear",
+                    "easeout",
+                    "easein",
+                    "easeinout",
+                    "backin",
+                    "backout",
+                    "elastic",
+                    "bounce"
+                  ]
+                },
+                "validators": [],
+                "help": "Easing function used for the animation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_portrait": {
+      "type": "object",
+      "required": true,
+      "title": "Portrait Graphic",
+      "properties": {
+        "_src": {
+          "type": "string",
+          "required": false,
+          "title": "Graphic",
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": [],
+          "help": "The image for portrait orientation"
+        },
+        "_width": {
+          "type": "number",
+          "required": false,
+          "title": "Graphic width",
+          "default": 100,
+          "inputType": "Number",
+          "validators": ["number"],
+          "help": "The image width for portrait orientation"
+        },
+        "_height": {
+          "type": "number",
+          "required": false,
+          "title": "Graphic height",
+          "default": 100,
+          "inputType": "Number",
+          "validators": ["number"],
+          "help": "The image height for portrait orientation"
+        },
+        "_initial": {
+          "type": "array",
+          "required": true,
+          "title": "Initial animation state",
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_selector": {
+                "type": "string",
+                "required": false,
+                "title": "Selector",
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "CSS selector for the elements"
+              },
+              "_properties": {
+                "type": "object",
+                "default": {},
+                "title": "CSS Attributes",
+                "inputType": {
+                  "type": "CodeEditor",
+                  "mode": "json"
+                },
+                "validators": [],
+                "help": "CSS values applied to the selector using snap svg"
+              }
+            }
+          }
+        },
+        "_states": {
+          "type": "array",
+          "required": true,
+          "title": "Animation states",
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_index": {
+                "type": "number",
+                "required": false,
+                "default": 0,
+                "title": "Index",
+                "inputType": "Number",
+                "validators": ["number"],
+                "help": "Order of the animation"
+              },
+              "_selector": {
+                "type": "string",
+                "required": false,
+                "title": "Selector",
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "CSS selector for the elements"
+              },
+              "_animation": {
+                "type": "object",
+                "default": {},
+                "title": "CSS Attributes",
+                "inputType": {
+                  "type": "CodeEditor",
+                  "mode": "json"
+                },
+                "validators": [],
+                "help": "CSS values applied to the selector using snap svg"
+              },
+              "_duration": {
+                "type": "number",
+                "required": false,
+                "default": 200,
+                "title": "Duration",
+                "inputType": "Number",
+                "validators": ["number"],
+                "help": "Duration of the animation in milliseconds"
+              },
+              "_delay": {
+                "type": "number",
+                "required": false,
+                "default": 0,
+                "title": "Delay",
+                "inputType": "Number",
+                "validators": ["number"],
+                "help": "Delay of the animation in milliseconds"
+              },
+              "_easing": {
+                "type": "string",
+                "required": true,
+                "title": "Easing",
+                "enum": [
+                  "linear",
+                  "easeout",
+                  "easein",
+                  "easeinout",
+                  "backin",
+                  "backout",
+                  "elastic",
+                  "bounce"
+                ],
+                "default": "linear",
+                "inputType": {
+                  "type": "Select", 
+                  "options":[
+                    "linear",
+                    "easeout",
+                    "easein",
+                    "easeinout",
+                    "backin",
+                    "backout",
+                    "elastic",
+                    "bounce"
+                  ]
+                },
+                "validators": [],
+                "help": "Easing function used for the animation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "button": {
+      "type": "array",
+      "required": true,
+      "title": "Button Text",
+      "items": {
+        "type": "string",
+        "required": false,
+        "default": "",
+        "inputType": "Text",
+        "validators": [],
+        "help": "Button text for index",
+        "translatable": true
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+    "_id": "c-05",
+    "_parentId": "b-05",
+    "_type": "component",
+    "_component": "svgWrapper",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Introduction",
+    "displayTitle": "",
+    "body": "Adapt allows you to combine text and graphic components on the scrolling page to create rich and varied learning experiences.",
+    "instruction": "",
+    "_triggerOnScreen": {
+        "_isEnabled": false,
+        "_percentInviewVertical": 40
+    },
+    "_landscape": {
+        "_src": "course/en/images/landscape.svg",
+        "_width": 1920,
+        "_height": 1080,
+        "_initial": [
+            {
+                "_selector": "#text-1,#text-2",
+                "_properties": {
+                    "opacity": 0,
+                    "transform": "t0 -50 s0.75"
+                }
+            }
+        ],
+        "_states": [
+            {
+                "_index": 0,
+                "_selector": "#Path_2",
+                "_animation": {
+                    "opacity": 1,
+                    "transform": "s1"
+                },
+                "_duration": 250,
+                "_delay": 0,
+                "_easing": "linear"
+            },
+            {
+                "_index": 1,
+                "_selector": "#text-2",
+                "_animation": {
+                    "opacity": 1,
+                    "transform": "t-0 0 s1"
+                },
+                "_duration": 500,
+                "_easing": "linear"
+            }
+        ]
+    },   
+    "_portrait": {
+        "_src": "course/en/images/portrait.svg",
+        "_width": 0,
+        "_height": 0,
+        "_initial": [
+            {
+                "_selector": "#text-1,#text-2",
+                "_properties": {
+                    "opacity": 0,
+                    "transform": "t0 -50 s0.75"
+                }
+            }
+        ],
+        "_states": [
+        ]
+    },
+    "button": [
+        "Start"
+    ]
+}

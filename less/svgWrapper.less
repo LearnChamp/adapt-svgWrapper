@@ -1,0 +1,35 @@
+.svg-wrapper-inner {
+    
+    .svg-wrapper-widget {
+        position: relative;
+        
+        iframe {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .next {
+            .next-button {
+                width: 100%;
+                background: @item-color;
+                color: @item-text-color;
+                
+                .no-button & {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                    background: transparent;
+
+                    .no-touch &:hover {
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
