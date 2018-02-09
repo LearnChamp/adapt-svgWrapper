@@ -111,8 +111,6 @@ This plugin uses [snap.svg](http://snapsvg.io/) to manipulate the svg content. s
 ----------------------------
 
 ## Limitations
-**Caution!**   
-This plugin extends from itemsModel. This model will be removed from Version 3.0.0 of the Framework. **Therefore this Version of the plugin is not compatible with Versions 3.0.0 of the Framework!** If you would like to use the plugin, you will need to include the itemsModel in the plugin directly.     
 No accessibility support! 
 
 ----------------------------
